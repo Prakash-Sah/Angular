@@ -1,0 +1,84 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-12 col-xs-12 pl-5">
+			<div class="product_div">
+				<div>
+					<img class="img-fluid pl-2 mt-2" [src]="link">
+					<div class="text-center pb-2">
+						<span>{{productName}} </span>
+						<span></span>
+					</div>
+				</div>
+				
+			</div>
+			<div class="description_div">
+				<div class="col-lg-11 title">
+					<h6>Key Specifications</h6>
+				</div>
+				<div class="details">
+					<ul class="pl-0 mt-2">
+						<li *ngFor="let content of contents ">{{content}}</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		
+
+
+		<div class="col-lg-7 pl-1">
+			<div class="text-center col-lg-10 col-sm-12">
+				<h6 class="font-weight-bold">Step <span>{{steps}} of 5</span></h6>
+			</div>
+			<div class="tab mt-2">
+				<button class="d-flex" routerLink="config" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+					true}">
+					<div class="child_tab">
+						<img class="svg" [src]="configImg">
+					
+					</div>
+					<div>Configuration</div>
+				</button>
+				<button class="d-flex" routerLink="info" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+					true}">
+					<div class="child_tab">
+						<img class="svg" [src]="configImg">
+					</div>
+					<div>Information</div>
+				</button>
+				<button class="d-flex " routerLink="verify" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+					true}">
+					<div class="child_tab">
+						<img class="svg" [src]="configImg">
+					</div>
+					<div>Verification</div>
+				</button>
+				<button class="d-flex" routerLink="price" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+					true}">
+					<div class="child_tab">
+						<img class="svg" [src]="configImg">
+					</div>
+					<div>Pricing</div>
+				</button>
+				<button class="d-flex" routerLink="book" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+					true}">
+					<div class="child_tab">
+						<img class="svg" [src]="configImg">
+					</div>
+					<div>Booking</div>
+				</button>
+			</div>
+			
+			
+			
+			
+			
+			<router-outlet></router-outlet>
+			
+			
+		</div>
+		
+	</div>
+</div>
