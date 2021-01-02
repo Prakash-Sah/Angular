@@ -1,0 +1,44 @@
+<style>
+
+</style>
+<div id="Configuration">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="config_head">
+				<h6>Configure Your Product</h6>	
+			</div>
+		</div>
+	</div>
+	
+	<div>
+	<div class="container-fluid" *ngFor="let t of map.entries();let c=index;">
+		<h6>{{t[0]}}</h6>
+		<div class="row">
+			<div class=""*ngFor="let model of t[1]">
+				<button class="btn btn_configure" (click) ="call(model.attributeId,model.productId,model.imageUrl);cost(model.price,c);selectedAttribute(model.attributeType,model.attributeName)"[disabled]=isView[c]>{{model.attributeName}}</button>
+			</div>
+
+			
+
+		</div>
+	</div>
+	</div>
+	<div class="container-fluid mt-2 p-0 pb-2">
+		<div class="row pt-2 pb-2">
+			<div class="co-lg-6 col-md-2 co-sm-6">
+			</div>
+			<div class="col-lg-2 col-md-5 col-sm-2">
+				<button class="btn reset_btn btn_configure nav_btn" (click)= "resetValue()">
+					Reset
+				</button>
+			</div>
+			<div class="col-lg-2 col-md-3 col-sm-3">
+				<button class="btn btn_configure nav_btn float-right" type="button" routerLink="../info" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+					true}" [disabled]="isClick" >
+				Continue
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+

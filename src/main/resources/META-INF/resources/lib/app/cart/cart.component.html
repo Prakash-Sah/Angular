@@ -1,0 +1,23 @@
+<strong>Shopping Cart</strong>
+
+<div *ngIf="item.length === 0" class="alert alert-info">Your Cart is Empty.</div>
+<div class=row *ngIf="item.length > 0"> 
+    <div class="card" style="width: 18rem;" *ngFor="let t of item">
+     <!-- <img class="card-img-top" src="{{t.productImg}}" alt="Image Not Found">-->
+
+      <div class="card-body">
+        <h5 class="card-title">{{t.productName}}</h5>
+        <p class="card-text">{{t.productDesc | slice: 0:50}}...</p>
+       <!-- <div class=row>
+            <a routerLink="/viewDetails/{{t.productId}}" class="btn btn-primary btn-small">Buy Now</a>
+            <a routerLink="/viewDetails/{{t.productId}}" class="btn btn-danger btn-small">Remove</a>
+        </div>-->
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button routerLink="/viewDetails/{{t.productId}}"type="button"class="btn btn-sm btn-primary">Buy Now</button>
+            <button (click)="removeCartItems(t.productId)"  type="button" class="btn btn-sm btn-danger">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

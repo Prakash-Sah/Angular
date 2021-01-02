@@ -1,0 +1,67 @@
+<div class="mt-3" id="Information">
+	<div class="container-fluid mt-3">
+		<form [formGroup]="personalDetails">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12 py-2 pl-0">
+					<div class="col-lg-11 tab_header">
+						<div class="row">
+							<div class="col-lg-11 col-md-11 pr-0">
+								<h6>Personal Information</h6>
+							</div>
+						</div>
+					</div>
+					<div class="form-row mt-4">
+						<div class="form-group col-lg-12">
+							<label for ="fullName">Full Name</label>
+							<input class="form-control" id="fullName" type="text" formControlName="fullName" required>
+						</div>
+						<div class="form-group col-lg-12">
+							<label for ="mobileNumber">Mobile Number</label>
+							<input class="form-control" id="mobileNumber" type="number" formControlName="mobileNumber" required>
+						</div>
+						<div class="form-group col-lg-12">
+							<label for ="emailId">Email Id</label>
+							<input class="form-control" id="emailId" type="email" formControlName="emailId" required>
+						</div>
+					</div>
+				</div>	
+				<div class="col-lg-6 col-md-6 col-sm-12 py-2">
+					<div class="col-lg-11 tab_header">
+						<div class="row">
+							<div class="col-lg-12 col-md-11 pr-0">
+								<h6>Delivery Information</h6>
+							</div>
+						</div>
+					</div>
+					<div class="form-row mt-4">
+						<div class="form-group col-md-12">
+							<label for ="state">State</label>
+							<input  class="form-control" type="text" formControlName="state" required>
+						</div>
+						<div class="form-group col-md-12">
+							<label for ="city">City</label>
+							<input  class="form-control" type="text" formControlName="city" required>
+						</div>
+						<div class="form-group col-md-12">
+							<label for ="zip">ZIP</label>
+							<input  class="form-control" type="text" formControlName="zip" required>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid mt-2 p-0 pb-2">
+				<div class="row pt-2 pb-2">
+					<div class="col-lg-6 col-md-2 col-sm-6"></div>
+					<div class="col-lg-2 col-md-5 col-sm-2">
+						<button class="btn reset_btn nav_btn btn_configure" type="button" (click) = "personalDetails.reset()">Reset</button>
+					</div>
+					<div class="col-lg-2 col-md-3 col-sm-3">
+						<button class="btn btn_configure nav_btn" [disabled]="!personalDetails.valid" type="button" routerLink="../verify" routerLinkActive="active"[routerLinkActiveOptions]="{exact:
+							true}" >Continue</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+

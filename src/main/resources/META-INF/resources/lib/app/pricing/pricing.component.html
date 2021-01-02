@@ -1,0 +1,91 @@
+<!--<div class="container-fluid">
+   <div class="co-lg-6 col-md-2 co-sm-6" *ngFor="let t of map.entries();let c=index;">
+      <h2>{{t[0]}}</h2>
+      <div class="row">
+              <button class="btn btn_configure">{{t[1]}}</button>
+      </div>
+  </div>
+  <div class="co-lg-6 col-md-2 co-sm-6">
+    <p>
+        Final Price : {{price}}
+      </p>
+  </div>
+</div>  -->
+
+<div id="pricing" class="mt-3 w-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <p>Select Quantity</p>
+              <!--  <input [(ngModel)]="quantity" (change)="update()"/> -->
+                <input #box (keyup)="update(box.value)">
+                
+            </div>
+            <div class=" row col-lg-12 col-sm-12">
+                <div class="col-lg-5 col-sm-6">
+                    <div class="card rounded-0">
+                        <div class="card-header border-bottom-0 rounded-0 accordion">
+                                <div class="row">
+                                    <div class="col-lg-10 col-sm-9">
+                                        Selected Configuration
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-9 col-sm-9"*ngFor="let t of map.entries()">
+                                    <h4>{{t[0]}}</h4>
+                                    <div class="row">
+                                        <h6 class="pl-4">{{t[1]}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-lg-10 col-sm-9">
+                                    Final Price
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-0 py-1">
+                                <div class="col-lg-8 col-sm-8">Showroom Price for 1</div>
+                                <div class="col-lg-4 col-sm-4 text-right">
+                                    <i class="fa fa-rupee"></i>
+                                    {{price}}
+                                </div>
+                                <div class="col-lg-8 col-sm-8" *ngIf="isShow">Showroom Price for {{quantity}}</div>
+                                <div class="col-lg-4 col-sm-4 text-right" *ngIf="isShow">
+                                    <i class="fa fa-rupee"></i>
+                                    <span [innerHTML]="prices"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="container-fluid mt-2 p-0 pb-2">
+		<div class="row pt-2 pb-2">
+			<div class="co-lg-6 col-md-2 co-sm-6">
+			</div>
+			<div class="col-lg-2 col-md-5 col-sm-2">
+				<button class="btn reset_btn btn_configure nav_btn"(click)="cart()" routerLink="/cart">
+					Cart
+				</button>
+			</div>
+			<div class="col-lg-2 col-md-3 col-sm-3">
+				<button class="btn btn_configure nav_btn float-right" type="button" routerLink="../book" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+					true}" [disabled]="isClick" >
+				Order
+				</button>
+			</div>
+		</div>
+    </div>
+</div>
+</div>
