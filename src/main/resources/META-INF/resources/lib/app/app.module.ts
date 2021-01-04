@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { WishListService } from './wishList.service';
 import { SessionStorageService } from './model/sessionStorageService';
 import { CartService } from './cart.service';
@@ -39,7 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
 	],
 	entryComponents: [AppComponent],
 	bootstrap: [], // Do not bootstrap anything (see ngDoBootstrap() below)
-	providers: [TestService,CartService,SessionStorageService,WishListService]
+	providers: [TestService,CartService,SessionStorageService,WishListService,AuthService]
 })
 export class AppModule {
 

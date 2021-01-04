@@ -62,13 +62,13 @@ export class ViewDetails
       this.configImg = this.datas.contentUrl;
     })
     
-    this.ts.getAccessToken().subscribe(data=>
-      {
-        this.datas=data;
-        //this.access_token=this.datas.access_token;
-        console.log("access_token is  "+this.datas);
-       // httpHeaders = httpHeaders.append('Authorization',  `Bearer ${this.access_token}`);
-      })
+    // this.ts.getAccessToken().subscribe(data=>
+    //   {
+    //     this.datas=data;
+    //     //this.access_token=this.datas.access_token;
+    //     console.log("access_token is  "+this.datas);
+    //    // httpHeaders = httpHeaders.append('Authorization',  `Bearer ${this.access_token}`);
+    //   })
 	
     }
     getContent(x:any)
