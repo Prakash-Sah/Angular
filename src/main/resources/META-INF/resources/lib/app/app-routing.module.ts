@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { ConfigurationComponent } from './configuration/configuration.component';
 import { ViewDetails } from './viewDetails/viewDetails.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
 { path :"",redirectTo: '/productList',pathMatch: 'full'},
 {path :" ", component: ProductList},
 { path: "productList",component: ProductList},
+{ path: "login",component: LoginComponent},
 { path: "viewDetails/:id", component: ViewDetails,children: [
     {path : " ",component:ConfigurationComponent},
     { path: 'config', component: ConfigurationComponent },

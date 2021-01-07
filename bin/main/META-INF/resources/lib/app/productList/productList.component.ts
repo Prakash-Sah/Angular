@@ -16,6 +16,8 @@ export class ProductList
 {
     datas:any;
     temp:any[]=[];
+    addedToWishList:boolean[]=[];
+    item: any;
     constructor(private ts:TestService,private cs:CartService,private ws:WishListService,private sessionStorage:SessionStorageService)
     {
         ts.getProductList().subscribe(data=>{
@@ -23,6 +25,7 @@ export class ProductList
             for(let i=0;i<this.datas.items.length;i++)
             {
                 this.temp.push(this.datas.items[i]);
+                this.addedToWishList.push(this.datas.items[i].wishlist);
                 console.log(this.temp);
                 console.log(this.datas.items[i].productImg);
             }
@@ -35,17 +38,19 @@ export class ProductList
             this.cs.setValue(product);
         })
     }
-    addedToWishList:boolean[]=[];
     
-    handleAddToWishlist(id:any,index:any) {
-        this.ws.addToWishlist(id).subscribe(() => {
-          this.addedToWishList[index] = true;
+    
+    handleAddToWishlist(id:any,index:any,product:Product) {
+        this.ws.addToWishlist(id,product).subscribe(data=> {
+          this.item = data;
+          this.addedToWishList[index] =this.item.wishlist;
         })
       }
     
-      handleRemoveFromWishlist(id:any,index:any) {
-        this.ws.removeFromWishlist(id).subscribe(() => {
-          this.addedToWishList[index] = false;
+      handleRemoveFromWishlist(id:any,index:any,product:Product) {
+        this.ws.removeFromWishlist(id,product).subscribe(data => {
+          this.item = data;
+          this.addedToWishList[index] =this.item.wishlist;
         })
       }
     

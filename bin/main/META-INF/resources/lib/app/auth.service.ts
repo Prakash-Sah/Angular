@@ -34,7 +34,6 @@ export class AuthService{
     var expireDate = new Date().getTime() + (1000 * token.expires_in);
     //Cookie.set("access_token", token.access_token, expireDate);
     window.sessionStorage.setItem('access_token', token.access_token);
-    window.sessionStorage.setItem('refresh_token', token.refresh_token)
     console.log('Obtained Access token'+token.access_token);
     window.location.href = 'http://localhost:8080';
   }
@@ -65,29 +64,5 @@ export class AuthService{
           data => this.saveToken(data),
           err => alert('Invalid Credentials'));
   }
-  logout()
-  {
-    window.sessionStorage.removeItem('access_token');
-  }
   
-  refreshToken()
-  {
-
-    let refresh_token = window.sessionStorage.getItem('refresh_token')|| '{}';
-    let params = new URLSearchParams();   
-    params.append('grant_type','refresh_token');
-    params.append('refresh_token',refresh_token);
-    params.append('client_id', this.clientId);
-    params.append('client_secret', this.clientSecret);
-   
-
-    let headers = 
-      new HttpHeaders({'Content-type': 'application/x-www-form-urlencoded; charset=utf-8'});
-       
-      this._http.post('http://localhost:8080/o/oauth2/token', 
-        params.toString(), { headers: headers })
-        .subscribe(
-          data => this.saveToken(data),
-          err => alert('Invalid Credentials'));
-  }
 }

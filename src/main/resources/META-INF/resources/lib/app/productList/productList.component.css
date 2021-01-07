@@ -7,3 +7,25 @@
     color:palevioletred;
     cursor:pointer;
 }
+
+/*    Go to Cart*/
+#button {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 4px;
+  }
+  
+
+  #button {
+    width: auto;
+    font-size: 10pt;
+    font-family: tahoma;
+    margin-top: 10px;
+    margin-right: 5px;
+    position:absolute;
+    top:0;
+    right:0;
+}

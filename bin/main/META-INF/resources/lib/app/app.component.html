@@ -6,10 +6,15 @@
 		<input [(ngModel)]="hero.name" placeholder="name">
     </div>-->
     
-		<nav>
+		<!-- <nav>
 		<a routerLink="/productList">Product List</a>
-	  </nav>
+		<a (click)="login()">Sign In</a>
+		<div>
+			<input id="button" type="button" routerLink="/cart" value="Go to Cart">
+		</div>
+	  </nav> -->
 	  <div>
-		<input id="button" type="button" routerLink="/cart" value="Go to Cart">
+		<input id="button" type="button" routerLink="/login" value="Logout"(click)="logout()">
 	</div>
+	  <app-login></app-login>
 	  <router-outlet></router-outlet>

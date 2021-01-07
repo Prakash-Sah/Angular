@@ -5,8 +5,8 @@
     <img class="card-img-top img-fluid pl-2 mt-2" [src]='t.productImg' alt="Image Not Found">
     <div class="card-body">
       <h5 class="card-title">{{t.productName}}</h5>
-      <i *ngIf="addedToWishList[i]" class="fas fa-heart float-right" (click)="handleRemoveFromWishlist(t.productId,i)"></i>
-      <i *ngIf="!addedToWishList[i]" class="far fa-heart float-right" (click)="handleAddToWishlist(t.productId,i)"></i>
+      <i *ngIf="addedToWishList[i]" class="fas fa-heart float-right" (click)="handleRemoveFromWishlist(t.productId,i,t)"></i>
+      <i *ngIf="!addedToWishList[i]" class="far fa-heart float-right" (click)="handleAddToWishlist(t.productId,i,t)"></i>
       <p class="card-text">{{t.productDesc| slice: 0:50}}...</p>
       
      <!-- <a class="btn btn-primary"(click)="cart(t)">Add to Cart</a>

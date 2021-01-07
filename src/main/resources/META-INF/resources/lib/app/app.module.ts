@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { AuthService } from './auth.service';
 import { WishListService } from './wishList.service';
 import { SessionStorageService } from './model/sessionStorageService';
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
 		VerificationComponent,
 		PricingComponent,
 		BookingComponent,
-		CartComponent
+		CartComponent,
+		LoginComponent
 	],
 	entryComponents: [AppComponent],
 	bootstrap: [], // Do not bootstrap anything (see ngDoBootstrap() below)

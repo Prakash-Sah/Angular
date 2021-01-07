@@ -24,15 +24,19 @@ export class AppComponent {
 
 
 	public isLoggedIn = false;
-
+  intervalId:any;
   constructor(private _service: AuthService) { }
  
   ngOnInit() {
-	//this.isLoggedIn = this._service.checkCredentials(); 
-	let i = window.location.href.indexOf('code');
-    if(!this.isLoggedIn && i != -1) {
-      this._service.retrieveToken(window.location.href.substring(i + 5));
-	}
+  //this.isLoggedIn = this._service.checkCredentials(); 
+  //this.isLoggedIn = !!this._service.getToken();
+  //console.log("App Component ngOnInit"+this.isLoggedIn);
+	// let i = window.location.href.indexOf('code');
+  //   if(!this.isLoggedIn && i != -1) {
+  //     this._service.retrieveToken(window.location.href.substring(i + 5));
+  // }
+  
+  //setInterval(this._service.refreshToken(), 20000);
 
   }
 
@@ -41,7 +45,7 @@ export class AppComponent {
       'http://localhost:8080/o/oauth2/authorize?response_type=code&client_id=id-6da174f2-74fe-7a34-ff46-2aef7504384';
     }
  
-  /*logout() {
+  logout() {
     this._service.logout();
-  }*/
+  }
 }
